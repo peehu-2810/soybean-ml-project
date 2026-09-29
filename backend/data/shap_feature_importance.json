@@ -1,0 +1,124 @@
+{
+    "K": {
+        "model": "SVR",
+        "method": "model-agnostic SHAP",
+        "importance": [
+            {
+                "feature": "Experiment_Day",
+                "mean_absolute_shap": 34.55213191661045
+            },
+            {
+                "feature": "Mn",
+                "mean_absolute_shap": 13.771878272995664
+            },
+            {
+                "feature": "TDS",
+                "mean_absolute_shap": 10.603054257432197
+            },
+            {
+                "feature": "Concentration_ppm",
+                "mean_absolute_shap": 5.83762836380449
+            },
+            {
+                "feature": "SO4",
+                "mean_absolute_shap": 3.600528917271793
+            },
+            {
+                "feature": "NO3-N",
+                "mean_absolute_shap": 1.3465375992466935
+            },
+            {
+                "feature": "Alkalinity",
+                "mean_absolute_shap": 1.2324297776003899
+            },
+            {
+                "feature": "Na",
+                "mean_absolute_shap": 0.6651694986448357
+            },
+            {
+                "feature": "P",
+                "mean_absolute_shap": 0.5455294741890583
+            },
+            {
+                "feature": "Ca",
+                "mean_absolute_shap": 0.3574795067892571
+            }
+        ]
+    },
+    "Mg": {
+        "model": "SVR",
+        "method": "model-agnostic SHAP",
+        "importance": [
+            {
+                "feature": "Experiment_Day",
+                "mean_absolute_shap": 36.428074949579766
+            },
+            {
+                "feature": "Concentration_ppm",
+                "mean_absolute_shap": 3.9882799837901546
+            },
+            {
+                "feature": "TDS",
+                "mean_absolute_shap": 3.550999664148466
+            },
+            {
+                "feature": "Hardness",
+                "mean_absolute_shap": 2.496507545675033
+            },
+            {
+                "feature": "CO3",
+                "mean_absolute_shap": 1.0525580056463573
+            },
+            {
+                "feature": "NO3-N",
+                "mean_absolute_shap": 0.7493835479825222
+            },
+            {
+                "feature": "HCO3",
+                "mean_absolute_shap": 0.6060734637476781
+            },
+            {
+                "feature": "Na",
+                "mean_absolute_shap": 0.14747560367936885
+            }
+        ]
+    },
+    "N": {
+        "model": "SVR",
+        "method": "model-agnostic SHAP",
+        "importance": [
+            {
+                "feature": "Experiment_Day",
+                "mean_absolute_shap": 34.74109804091102
+            },
+            {
+                "feature": "P",
+                "mean_absolute_shap": 11.368766799782662
+            },
+            {
+                "feature": "Concentration_ppm",
+                "mean_absolute_shap": 5.38438051817528
+            },
+            {
+                "feature": "TDS",
+                "mean_absolute_shap": 1.4788730509957309
+            },
+            {
+                "feature": "Ca",
+                "mean_absolute_shap": 1.4424836195980866
+            },
+            {
+                "feature": "Alkalinity",
+                "mean_absolute_shap": 1.3599715393421596
+            },
+            {
+                "feature": "K",
+                "mean_absolute_shap": 0.15694623435434188
+            },
+            {
+                "feature": "Na",
+                "mean_absolute_shap": 0.08000923495985772
+            }
+        ]
+    }
+}

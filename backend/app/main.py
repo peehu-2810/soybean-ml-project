@@ -11,6 +11,7 @@ from app.config import (
 from app.routes.predict import router as predict_router
 from app.routes.results import router as results_router
 from app.routes.features import router as features_router
+from app.routes.shap import router as shap_router
 
 
 app = FastAPI(
@@ -56,3 +57,4 @@ app.add_middleware(
 app.include_router(predict_router)
 app.include_router(results_router)
 app.include_router(features_router)
+app.include_router(shap_router)

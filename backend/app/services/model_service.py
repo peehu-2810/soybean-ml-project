@@ -1,10 +1,11 @@
-# app/services/model_service.py
-
 from pathlib import Path
 import joblib
 
-from app.config import MODEL_PATHS, USE_MOCK_MODEL
-from app.config import FEATURES_BY_NUTRIENT
+from app.config import (
+    MODEL_PATHS,
+    FEATURES_BY_NUTRIENT,
+    USE_MOCK_MODEL,
+)
 
 
 class ModelService:
@@ -16,8 +17,6 @@ class ModelService:
             self.load_models()
 
     def load_models(self):
-        """Load K, Mg and N models."""
-
         for nutrient, model_path in MODEL_PATHS.items():
 
             if not Path(model_path).exists():
@@ -28,7 +27,6 @@ class ModelService:
             self.models[nutrient] = joblib.load(model_path)
 
     def predict(self, nutrient, inputs):
-        """Predict water uptake."""
 
         if USE_MOCK_MODEL:
             ordered_values = [
