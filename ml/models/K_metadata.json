@@ -1,0 +1,27 @@
+{
+    "nutrient": "K",
+    "feature_order": [
+        "DAP",
+        "Concentration_ppm",
+        "NASA_ET_L_m2_day"
+    ],
+    "target": "Water_Uptake_L_m2_day",
+    "target_unit": "L/m2/day",
+    "model_type": "SVR",
+    "train_DAP_range": {
+        "start": 10.0,
+        "end": 79.0
+    },
+    "test_DAP_range": {
+        "start": 80.0,
+        "end": 97.0
+    },
+    "train_rows": 210,
+    "test_rows": 54,
+    "train_R2": 0.9970047966202731,
+    "test_R2": 0.9901296668608801,
+    "test_MSE": 0.007907229315111773,
+    "test_RMSE": 0.0889226029483605,
+    "test_MAE": 0.07023908047708519,
+    "data_provenance": "HYBRID PROTOTYPE: NASA Table 3 provides real soybean daily evapotranspiration baseline; N/K/Mg concentration treatment effects are synthetic/mock and are not direct NASA experimental treatments."
+}
