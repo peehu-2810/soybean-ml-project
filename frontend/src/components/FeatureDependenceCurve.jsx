@@ -41,7 +41,7 @@ export default function FeatureDependenceCurve() {
 
   return (
     <section className="dark-panel">
-      <div className="lighter-green-subheading">SHAP DEPENDENCE & SATURATION CURVE (PAPER FIG. 6)</div>
+      <div className="lighter-green-subheading">SHAP DEPENDENCE & SATURATION CURVE</div>
       <h3 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: '0.5rem', fontSize: '1.25rem' }}>
         Concentration Saturation Impact Curve ({selectedFeature})
       </h3>

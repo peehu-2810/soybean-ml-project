@@ -28,7 +28,7 @@ export default function CorrelationHeatmap() {
 
   return (
     <section className="dark-panel">
-      <div className="lighter-green-subheading">CHEMICAL CORRELATION MATRIX (PAPER FIG. 3)</div>
+      <div className="lighter-green-subheading">CHEMICAL CORRELATION MATRIX</div>
       <h3 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: '0.5rem', fontSize: '1.25rem' }}>
         Pearson Feature Correlation Heatmap Grid
       </h3>

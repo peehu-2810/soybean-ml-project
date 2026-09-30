@@ -28,9 +28,9 @@ export default function ModelBenchmarks({ resultsData }) {
 
   return (
     <section className="dark-panel">
-      <div className="lighter-green-subheading">BENCHMARK PERFORMANCE & MODEL COMPARISON (PAPER FIG. 4)</div>
+      <div className="lighter-green-subheading">BENCHMARK PERFORMANCE & MODEL COMPARISON</div>
       <h3 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: '0.5rem', fontSize: '1.25rem' }}>
-        Model Accuracy ($R^2$) & Error Metrics Comparison
+        Model Accuracy & Error Metrics Comparison
       </h3>
       <p style={{ color: '#c4d4c0', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
         Quantitative regression evaluation across Random Forest, Support Vector Regressor (SVR), and K-Nearest Neighbors evaluated on holdout 80/20 chronological DAP split.
