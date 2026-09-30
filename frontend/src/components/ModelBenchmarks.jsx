@@ -1,4 +1,14 @@
 import React, { useState } from 'react';
+import {
+  ResponsiveContainer,
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  CartesianGrid
+} from 'recharts';
 
 export default function ModelBenchmarks({ resultsData }) {
   const [activeNutrientTab, setActiveNutrientTab] = useState('K');
@@ -8,10 +18,21 @@ export default function ModelBenchmarks({ resultsData }) {
   const modelsMap = currentNutrientData.models || {};
   const selectedModel = currentNutrientData.selected_prototype_model || 'SVR';
 
+  // Format dataset for Recharts bar chart
+  const chartData = Object.entries(modelsMap).map(([mName, metrics]) => ({
+    name: mName,
+    'Train R²': Number((metrics['Train R2'] || 0).toFixed(3)),
+    'Test R²': Number(Math.max(0, metrics['Test R2'] || 0).toFixed(3)),
+    'Test RMSE': Number((metrics['Test RMSE'] || 0).toFixed(2))
+  }));
+
   return (
     <section className="dark-panel">
-      <div className="lighter-green-subheading">BENCHMARK PERFORMANCE & MODEL COMPARISON</div>
-      <p style={{ color: '#c4d4c0', marginBottom: '1.5rem', fontSize: '0.95rem' }}>
+      <div className="lighter-green-subheading">BENCHMARK PERFORMANCE & MODEL COMPARISON (PAPER FIG. 4)</div>
+      <h3 style={{ fontFamily: 'var(--font-heading)', color: '#ffffff', marginBottom: '0.5rem', fontSize: '1.25rem' }}>
+        Model Accuracy ($R^2$) & Error Metrics Comparison
+      </h3>
+      <p style={{ color: '#c4d4c0', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
         Quantitative regression evaluation across Random Forest, Support Vector Regressor (SVR), and K-Nearest Neighbors evaluated on holdout 80/20 chronological DAP split.
       </p>
 
@@ -29,6 +50,31 @@ export default function ModelBenchmarks({ resultsData }) {
         ))}
       </div>
 
+      {/* Model Benchmark Visual Bar Chart */}
+      <div style={{ width: '100%', height: 260, marginBottom: '2rem' }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <BarChart data={chartData} margin={{ top: 10, right: 30, left: 10, bottom: 10 }}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#38592f" opacity={0.4} />
+            <XAxis dataKey="name" stroke="#8aa384" tick={{ fill: '#ffffff', fontSize: 13, fontFamily: 'var(--font-heading)' }} />
+            <YAxis stroke="#8aa384" tick={{ fill: '#8aa384', fontSize: 12 }} />
+            <Tooltip
+              contentStyle={{
+                backgroundColor: '#1b3317',
+                borderColor: '#38592f',
+                borderRadius: '8px',
+                color: '#ffffff',
+                fontFamily: 'var(--font-heading)'
+              }}
+            />
+            <Legend wrapperStyle={{ fontFamily: 'var(--font-heading)', fontSize: '12px' }} />
+            <Bar dataKey="Train R²" fill="#7ea373" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="Test R²" fill="#8cc63f" radius={[4, 4, 0, 0]} />
+            <Bar dataKey="Test RMSE" fill="#e5e0d1" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
+
+      {/* Data Table */}
       <div className="custom-table-container">
         <table className="custom-table">
           <thead>

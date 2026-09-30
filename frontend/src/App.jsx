@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import NutrientCalculator from './components/NutrientCalculator';
+import DapGrowthCurve from './components/DapGrowthCurve';
+import CorrelationHeatmap from './components/CorrelationHeatmap';
+import FeatureDependenceCurve from './components/FeatureDependenceCurve';
 import ShapSection from './components/ShapSection';
 import ModelBenchmarks from './components/ModelBenchmarks';
 import FooterStats from './components/FooterStats';
@@ -41,8 +44,14 @@ export default function App() {
     <div className="container">
       <Header />
       <NutrientCalculator featuresSpecs={featuresSpecs} />
+
+      {/* 4 Scientific Graphs from Nature Article */}
+      <DapGrowthCurve />
+      <CorrelationHeatmap />
+      <FeatureDependenceCurve />
       <ShapSection shapData={shapData} />
       <ModelBenchmarks resultsData={resultsData} />
+
       <FooterStats />
     </div>
   );
